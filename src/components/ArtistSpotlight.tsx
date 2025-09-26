@@ -7,22 +7,30 @@ import artistPromo from "@/assets/artist-promo.jpg";
 const ArtistSpotlight = () => {
   const artists = [
     {
-      name: "Rising Star",
-      genre: "Afrobeats / R&B",
+      name: "Wahriah Queen",
+      genre: "Dancehall / R&B",
       image: artistGlam,
-      streams: "5.2M",
-      followers: "350K",
-      latest: "Fire & Ice",
-      description: "Multi-talented artist bringing fresh Caribbean sounds to the global stage."
+      streams: "2.1M",
+      followers: "180K",
+      latest: "Money Rain",
+      description: "Rising star from Jamaica bringing authentic Caribbean vibes to the global stage.",
+      project: "Touch Down EP",
+      instagram: "https://instagram.com/wahriah_m",
+      youtube: "https://youtube.com/@WahriahQueen",
+      youtubeVideo: "https://youtu.be/Y8OQmcWQfTI",
+      bookingContact: "regulusshinesbright@gmail.com",
+      bookingWhatsApp: "876-373-6661"
     },
     {
       name: "Featured Artist",
-      genre: "Dancehall / Pop",
+      genre: "Dancehall / Pop", 
       image: artistPromo,
       streams: "3.1M",
       followers: "180K",
       latest: "Island Dreams",
-      description: "Dynamic performer with chart-topping hits across Jamaica and the USA."
+      description: "Dynamic performer with chart-topping hits across Jamaica and the USA.",
+      instagram: "#",
+      youtube: "#"
     }
   ];
 
@@ -53,15 +61,33 @@ const ArtistSpotlight = () => {
                     Play Latest
                   </Button>
                   <div className="flex space-x-2">
-                    <Button size="icon" variant="ghost" className="text-white hover:text-primary hover:bg-white/20">
+                    <Button 
+                      size="icon" 
+                      variant="ghost" 
+                      className="text-white hover:text-primary hover:bg-white/20"
+                      onClick={() => window.open(artist.instagram, '_blank')}
+                    >
                       <Instagram className="h-4 w-4" />
                     </Button>
-                    <Button size="icon" variant="ghost" className="text-white hover:text-primary hover:bg-white/20">
-                      <Twitter className="h-4 w-4" />
-                    </Button>
-                    <Button size="icon" variant="ghost" className="text-white hover:text-primary hover:bg-white/20">
+                    <Button 
+                      size="icon" 
+                      variant="ghost" 
+                      className="text-white hover:text-primary hover:bg-white/20"
+                      onClick={() => window.open(artist.youtube, '_blank')}
+                    >
                       <Youtube className="h-4 w-4" />
                     </Button>
+                    {artist.youtubeVideo && (
+                      <Button 
+                        size="icon" 
+                        variant="ghost" 
+                        className="text-white hover:text-primary hover:bg-white/20"
+                        onClick={() => window.open(artist.youtubeVideo, '_blank')}
+                        title="Watch Music Video"
+                      >
+                        <Play className="h-4 w-4" />
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -84,10 +110,30 @@ const ArtistSpotlight = () => {
                   <div>
                     <span className="text-sm text-muted-foreground">Latest Release:</span>
                     <p className="font-semibold text-foreground">{artist.latest}</p>
+                    {artist.project && (
+                      <p className="text-sm text-muted-foreground">from "{artist.project}"</p>
+                    )}
                   </div>
-                  <Button variant="cta" size="sm">
-                    View Profile
-                  </Button>
+                  <div className="flex flex-col gap-2">
+                    {artist.youtubeVideo && (
+                      <Button 
+                        variant="cta" 
+                        size="sm"
+                        onClick={() => window.open(artist.youtubeVideo, '_blank')}
+                      >
+                        Watch Video
+                      </Button>
+                    )}
+                    {artist.bookingContact && (
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => window.open(`mailto:${artist.bookingContact}`, '_blank')}
+                      >
+                        Book Now
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Card>
