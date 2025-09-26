@@ -23,22 +23,21 @@ const Header = () => {
             <img 
               src={londonStarLogo} 
               alt="London Star Records" 
-              className="h-10 w-10 object-contain"
+              className="h-16 w-auto hover:scale-110 transition-transform duration-300"
             />
-            <span className="text-xl font-bold text-foreground">
-              London Star Records
-            </span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
+            {navigation.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-all duration-300 font-medium relative group animate-fade-in"
+                style={{animationDelay: `${index * 0.1}s`}}
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>

@@ -47,7 +47,7 @@ const ArtistSpotlight = () => {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {artists.map((artist, index) => (
-            <Card key={index} className="group overflow-hidden border-border bg-card hover:shadow-xl transition-all duration-500">
+            <Card key={index} className="group overflow-hidden border-border bg-card hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
               <div className="relative overflow-hidden">
                 <img
                   src={artist.image}
@@ -56,7 +56,7 @@ const ArtistSpotlight = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <Button variant="hero" size="sm" className="mb-3">
+                  <Button variant="hero" size="sm" className="mb-3 hover:scale-105 transition-transform duration-200">
                     <Play className="mr-2 h-4 w-4" />
                     Play Latest
                   </Button>
