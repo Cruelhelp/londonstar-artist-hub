@@ -48,7 +48,7 @@ const HeroSection = () => {
             </Button>
             <Button 
               variant="outline" 
-              className="text-white border-white hover:bg-white hover:text-black"
+              className="text-black border-white hover:bg-white hover:text-black"
               onClick={() => window.open("https://youtu.be/Y8OQmcWQfTI", '_blank')}
             >
               <Music className="mr-2 h-5 w-5" />
