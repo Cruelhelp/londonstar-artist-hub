@@ -1,5 +1,6 @@
-import { Play, Music, ExternalLink } from "lucide-react";
+import { Play, Music, ExternalLink, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import MiniPlayer from "@/components/MiniPlayer";
 import artistHero from "@/assets/artist-hero.jpg";
 
 const HeroSection = () => {
@@ -9,8 +10,10 @@ const HeroSection = () => {
     project: "Touch Down EP",
     description: "Experience the explosive new single \"Money Rain\" from Wahriah Queen. Available on all digital platforms - the sound that's taking Jamaica by storm.",
     image: artistHero,
-    youtubeChannel: "https://youtube.com/@WahriahQueen",
-    musicVideo: "https://youtu.be/Y8OQmcWQfTI"
+    youtubeChannel: "https://www.youtube.com/@wahriahqueenvevo5984",
+    musicVideo: "https://www.youtube.com/watch?v=Y8OQmcWQfTI",
+    instagram: "https://www.instagram.com/wahriah_queen",
+    tiktok: "https://www.tiktok.com/@wahriah_queenofficial"
   };
 
   return (
@@ -73,22 +76,40 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Artist Info */}
-          <div className="bg-black/40 backdrop-blur-md rounded-lg p-6 border border-white/10 hover:bg-black/50 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.8s'}}>
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                <Music className="h-8 w-8 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">{featuredArtist.name}</h3>
-                <p className="text-white/70 mb-2">Latest Single - "{featuredArtist.track}"</p>
-                <div className="flex items-center space-x-4 text-sm text-white/60">
-                  <span>• Executive Producer: London Star Records</span>
-                  <span>• Available All Platforms</span>
-                  <span>• Rising</span>
+          {/* Artist Info and Mini Player */}
+          <div className="grid md:grid-cols-2 gap-6 animate-scale-in" style={{animationDelay: '0.8s'}}>
+            <div className="bg-black/40 backdrop-blur-md rounded-lg p-6 border border-white/10 hover:bg-black/50 transition-all duration-300">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <Music className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1">{featuredArtist.name}</h3>
+                  <p className="text-white/70 mb-2">Latest Single - "{featuredArtist.track}"</p>
+                  <div className="flex items-center space-x-4 text-sm text-white/60">
+                    <span>• Executive Producer: London Star Records</span>
+                    <span>• Available All Platforms</span>
+                  </div>
+                  <div className="flex items-center space-x-2 mt-3">
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="text-white hover:text-primary hover:bg-white/20 p-1"
+                      onClick={() => window.open(featuredArtist.instagram, '_blank')}
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </Button>
+                    <span className="text-white/60 text-xs">@wahriah_queen</span>
+                  </div>
                 </div>
               </div>
             </div>
+            
+            <MiniPlayer
+              title={featuredArtist.track}
+              artist={featuredArtist.name}
+              youtubeUrl={featuredArtist.musicVideo}
+            />
           </div>
         </div>
       </div>

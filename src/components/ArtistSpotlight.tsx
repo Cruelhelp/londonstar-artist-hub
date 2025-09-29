@@ -15,9 +15,10 @@ const ArtistSpotlight = () => {
       latest: "Money Rain",
       description: "Rising star from Jamaica bringing authentic Caribbean vibes to the global stage.",
       project: "Touch Down EP",
-      instagram: "https://instagram.com/wahriah_m",
-      youtube: "https://youtube.com/@WahriahQueen",
-      youtubeVideo: "https://youtu.be/Y8OQmcWQfTI",
+      instagram: "https://www.instagram.com/wahriah_queen",
+      youtube: "https://www.youtube.com/@wahriahqueenvevo5984",
+      youtubeVideo: "https://www.youtube.com/watch?v=Y8OQmcWQfTI",
+      tiktok: "https://www.tiktok.com/@wahriah_queenofficial",
       bookingContact: "regulusshinesbright@gmail.com",
       bookingWhatsApp: "876-373-6661"
     },

@@ -7,8 +7,7 @@ const Footer = () => {
   const quickLinks = [
     { name: "Artists", href: "/artists" },
     { name: "Releases", href: "/releases" },
-    { name: "News", href: "/news" },
-    { name: "Store", href: "/store" },
+    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -61,13 +60,23 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="flex space-x-2">
-              <Button size="icon" variant="ghost" className="text-secondary-foreground hover:text-primary hover:bg-primary/10">
+              <Button 
+                size="icon" 
+                variant="ghost" 
+                className="text-secondary-foreground hover:text-primary hover:bg-primary/10"
+                onClick={() => window.open('https://www.instagram.com/londonstarja', '_blank')}
+              >
                 <Instagram className="h-4 w-4" />
               </Button>
               <Button size="icon" variant="ghost" className="text-secondary-foreground hover:text-primary hover:bg-primary/10">
                 <Twitter className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="ghost" className="text-secondary-foreground hover:text-primary hover:bg-primary/10">
+              <Button 
+                size="icon" 
+                variant="ghost" 
+                className="text-secondary-foreground hover:text-primary hover:bg-primary/10"
+                onClick={() => window.open('https://www.youtube.com/@wahriahqueenvevo5984', '_blank')}
+              >
                 <Youtube className="h-4 w-4" />
               </Button>
               <Button size="icon" variant="ghost" className="text-secondary-foreground hover:text-primary hover:bg-primary/10">
