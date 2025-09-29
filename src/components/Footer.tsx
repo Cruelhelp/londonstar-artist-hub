@@ -1,14 +1,15 @@
 import { Music, Mail, Phone, MapPin, Instagram, Twitter, Youtube, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import londonStarLogo from "@/assets/london-star-logo.jpg";
+import { Link } from "react-router-dom";
+import londonStarLogo from "@/assets/london-star-logo.png";
 
 const Footer = () => {
   const quickLinks = [
-    { name: "Artists", href: "#artists" },
-    { name: "Releases", href: "#releases" },
-    { name: "News", href: "#news" },
-    { name: "Store", href: "#store" },
-    { name: "Contact", href: "#contact" },
+    { name: "Artists", href: "/artists" },
+    { name: "Releases", href: "/releases" },
+    { name: "News", href: "/news" },
+    { name: "Store", href: "/store" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const services = [
@@ -81,12 +82,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
-                    href={link.href}
+                  <Link 
+                    to={link.href}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
