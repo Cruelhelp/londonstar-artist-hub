@@ -20,80 +20,78 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-t from-background to-muted/10 text-foreground border-t border-border/30">
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid md:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-4 mb-8">
               <img 
                 src={londonStarLogo} 
                 alt="London Star Records" 
-                className="h-12 w-12 object-contain"
+                className="h-16 w-16 object-contain drop-shadow-lg"
               />
               <div>
-                <h3 className="text-xl font-bold">London Star Records</h3>
-                <p className="text-sm text-secondary-foreground/70">Elevating Talent Globally</p>
+                <h3 className="text-2xl font-bold">London Star Records</h3>
+                <p className="text-base text-muted-foreground">Elevating Talent Globally</p>
               </div>
             </div>
             
-            <p className="text-secondary-foreground/80 mb-6 max-w-md">
+            <p className="text-muted-foreground mb-8 max-w-md text-lg leading-relaxed">
               London Star Records is dedicated to discovering and nurturing exceptional talent 
               from Jamaica and the USA, bringing their unique sounds to the world stage.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3 text-sm">
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center space-x-4 text-base">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span>Kingston, Jamaica & Miami, USA</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm">
+              <div className="flex items-center space-x-4 text-base">
                 <Mail className="h-4 w-4 text-primary" />
                 <span>info@londonstarrecords.com</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm">
+              <div className="flex items-center space-x-4 text-base">
                 <Phone className="h-4 w-4 text-primary" />
                 <span>+1 (305) 555-0123</span>
               </div>
             </div>
 
             {/* Social Media */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-4">
               <Button 
                 size="icon" 
-                variant="ghost" 
-                className="text-secondary-foreground hover:text-primary hover:bg-primary/10"
+                className="glass text-foreground hover:text-primary hover:bg-primary/10 rounded-full w-12 h-12"
                 onClick={() => window.open('https://www.instagram.com/londonstarja', '_blank')}
               >
-                <Instagram className="h-4 w-4" />
+                <Instagram className="h-5 w-5" />
               </Button>
-              <Button size="icon" variant="ghost" className="text-secondary-foreground hover:text-primary hover:bg-primary/10">
-                <Twitter className="h-4 w-4" />
+              <Button size="icon" className="glass text-foreground hover:text-primary hover:bg-primary/10 rounded-full w-12 h-12">
+                <Twitter className="h-5 w-5" />
               </Button>
               <Button 
                 size="icon" 
-                variant="ghost" 
-                className="text-secondary-foreground hover:text-primary hover:bg-primary/10"
+                className="glass text-foreground hover:text-primary hover:bg-primary/10 rounded-full w-12 h-12"
                 onClick={() => window.open('https://www.youtube.com/@wahriahqueenvevo5984', '_blank')}
               >
-                <Youtube className="h-4 w-4" />
+                <Youtube className="h-5 w-5" />
               </Button>
-              <Button size="icon" variant="ghost" className="text-secondary-foreground hover:text-primary hover:bg-primary/10">
-                <Facebook className="h-4 w-4" />
+              <Button size="icon" className="glass text-foreground hover:text-primary hover:bg-primary/10 rounded-full w-12 h-12">
+                <Facebook className="h-5 w-5" />
               </Button>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors text-base"
                   >
                     {link.name}
                   </Link>
@@ -104,13 +102,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2">
+            <h4 className="text-xl font-bold mb-6">Services</h4>
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
                   <a 
                     href={service.href}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors text-base"
                   >
                     {service.name}
                   </a>
@@ -121,19 +119,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-foreground/20 mt-12 pt-8">
+        <div className="border-t border-border/30 mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-secondary-foreground/60 text-sm mb-4 md:mb-0">
+            <p className="text-muted-foreground text-base mb-4 md:mb-0">
               © 2024 London Star Records. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+            <div className="flex space-x-8 text-base">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 Cookie Policy
               </a>
             </div>

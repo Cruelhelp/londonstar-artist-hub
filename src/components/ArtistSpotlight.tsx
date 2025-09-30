@@ -36,90 +36,86 @@ const ArtistSpotlight = () => {
   ];
 
   return (
-    <section id="artists" className="py-20 bg-background">
+    <section id="artists" className="py-24 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-foreground mb-6">Our Artists</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-6xl font-bold text-foreground mb-8 tracking-tight">Our Artists</h2>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Discover the incredible talent signed to London Star Records. 
             From rising stars to established performers, our artists are making waves globally.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto">
           {artists.map((artist, index) => (
-            <Card key={index} className="group overflow-hidden border-border bg-card hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
+            <Card key={index} className="group overflow-hidden card-modern rounded-3xl hover:scale-105 animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
               <div className="relative overflow-hidden">
                 <img
                   src={artist.image}
                   alt={artist.name}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <Button variant="hero" size="sm" className="mb-3 hover:scale-105 transition-transform duration-200">
-                    <Play className="mr-2 h-4 w-4" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-6 left-6 right-6 transform translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <Button className="btn-modern mb-4 px-6 py-3 text-base font-semibold rounded-xl hover:scale-105 transition-transform duration-200">
+                    <Play className="mr-3 h-5 w-5" />
                     Play Latest
                   </Button>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4">
                     <Button 
                       size="icon" 
-                      variant="ghost" 
-                      className="text-white hover:text-primary hover:bg-white/20"
+                      className="glass text-white hover:text-primary hover:bg-white/20 rounded-full w-12 h-12"
                       onClick={() => window.open(artist.instagram, '_blank')}
                     >
-                      <Instagram className="h-4 w-4" />
+                      <Instagram className="h-5 w-5" />
                     </Button>
                     <Button 
                       size="icon" 
-                      variant="ghost" 
-                      className="text-white hover:text-primary hover:bg-white/20"
+                      className="glass text-white hover:text-primary hover:bg-white/20 rounded-full w-12 h-12"
                       onClick={() => window.open(artist.youtube, '_blank')}
                     >
-                      <Youtube className="h-4 w-4" />
+                      <Youtube className="h-5 w-5" />
                     </Button>
                     {artist.youtubeVideo && (
                       <Button 
                         size="icon" 
-                        variant="ghost" 
-                        className="text-white hover:text-primary hover:bg-white/20"
+                        className="glass text-white hover:text-primary hover:bg-white/20 rounded-full w-12 h-12"
                         onClick={() => window.open(artist.youtubeVideo, '_blank')}
                         title="Watch Music Video"
                       >
-                        <Play className="h-4 w-4" />
+                        <Play className="h-5 w-5" />
                       </Button>
                     )}
                   </div>
                 </div>
               </div>
               
-              <CardContent className="p-6">
-                <div className="flex justify-between items-start mb-4">
+              <CardContent className="p-8">
+                <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-1">{artist.name}</h3>
-                    <p className="text-primary font-semibold">{artist.genre}</p>
+                    <h3 className="text-3xl font-bold text-foreground mb-2">{artist.name}</h3>
+                    <p className="text-emphasis text-lg font-semibold">{artist.genre}</p>
                   </div>
-                  <div className="text-right text-sm text-muted-foreground">
-                    <div>{artist.streams} streams</div>
-                    <div>{artist.followers} followers</div>
+                  <div className="text-right text-base text-muted-foreground">
+                    <div className="font-semibold">{artist.streams} streams</div>
+                    <div className="font-semibold">{artist.followers} followers</div>
                   </div>
                 </div>
                 
-                <p className="text-muted-foreground mb-4">{artist.description}</p>
+                <p className="text-muted-foreground mb-6 text-lg leading-relaxed">{artist.description}</p>
                 
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-sm text-muted-foreground">Latest Release:</span>
-                    <p className="font-semibold text-foreground">{artist.latest}</p>
+                    <span className="text-base text-muted-foreground">Latest Release:</span>
+                    <p className="font-bold text-foreground text-lg">{artist.latest}</p>
                     {artist.project && (
-                      <p className="text-sm text-muted-foreground">from "{artist.project}"</p>
+                      <p className="text-base text-muted-foreground">from "{artist.project}"</p>
                     )}
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-3">
                     {artist.youtubeVideo && (
                       <Button 
-                        variant="cta" 
-                        size="sm"
+                        className="btn-modern px-6 py-3 text-base font-semibold rounded-xl"
                         onClick={() => window.open(artist.youtubeVideo, '_blank')}
                       >
                         Watch Video
@@ -127,8 +123,7 @@ const ArtistSpotlight = () => {
                     )}
                     {artist.bookingContact && (
                       <Button 
-                        variant="outline" 
-                        size="sm"
+                        className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 px-6 py-3 text-base font-semibold rounded-xl"
                         onClick={() => window.open(`mailto:${artist.bookingContact}`, '_blank')}
                       >
                         Book Now
@@ -141,8 +136,8 @@ const ArtistSpotlight = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="text-foreground border-border hover:bg-primary hover:text-primary-foreground">
+        <div className="text-center mt-16">
+          <Button className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 px-10 py-4 text-lg font-semibold rounded-2xl backdrop-blur-md transition-all duration-300">
             View All Artists
           </Button>
         </div>

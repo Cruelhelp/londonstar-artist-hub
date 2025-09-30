@@ -15,29 +15,29 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border/50 z-50 transition-all duration-300 hover:bg-background/98">
+    <header className="fixed top-0 left-0 right-0 glass-dark z-50 transition-all duration-300">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
               src={londonStarLogo} 
               alt="London Star Records" 
-              className="h-12 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+              className="h-14 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-110 drop-shadow-lg"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
             {navigation.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground/80 hover:text-primary transition-all duration-500 font-medium relative group text-sm lg:text-base animate-fade-in"
+                className="text-foreground/90 hover:text-primary transition-all duration-500 font-medium relative group text-base lg:text-lg animate-fade-in"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-500 group-hover:w-full"></span>
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-500 group-hover:w-full rounded-full"></span>
               </Link>
             ))}
           </nav>
@@ -46,7 +46,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden text-foreground hover:text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -59,13 +59,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/98 backdrop-blur-lg border-t border-border/30 animate-fade-in">
+          <div className="md:hidden glass-dark border-t border-border/30 animate-fade-in">
             <nav className="px-4 py-4 space-y-1">
               {navigation.map((item, index) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block text-foreground/80 hover:text-primary transition-all duration-300 font-medium py-3 px-2 rounded-md hover:bg-primary/5 animate-slide-up"
+                  className="block text-foreground/90 hover:text-primary transition-all duration-300 font-medium py-4 px-4 rounded-lg hover:bg-primary/10 animate-slide-up text-lg"
                   style={{animationDelay: `${index * 0.1}s`}}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
