@@ -29,7 +29,7 @@ GitHub Repo: [Cruelhelp/londonstar-artist-hub](https://github.com/Cruelhelp/lond
 - **Frontend Framework**: React + Vite  
 - **Language**: TypeScript  
 - **Styling**: Tailwind CSS + shadcn-ui  
-- **Deployment**: Lovable  
+- **Deployment**: Vercel  
 
 ---
 
