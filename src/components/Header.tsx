@@ -23,7 +23,7 @@ const Header = () => {
             <img
               src={londonStarLogo}
               alt="London Star Records"
-              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-20 w-auto transition-transform duration-300 group-hover:scale-105"
               style={{
                 filter: 'brightness(1.1) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.6))'
               }}
