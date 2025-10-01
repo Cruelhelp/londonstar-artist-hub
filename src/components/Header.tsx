@@ -23,21 +23,9 @@ const Header = () => {
             <img
               src={londonStarLogo}
               alt="London Star Records"
-              className="h-16 w-auto transition-transform duration-500 ease-in-out group-hover:scale-105"
+              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
               style={{
-                filter: `
-                  brightness(1.3)
-                  contrast(1.2)
-                  drop-shadow(2px 2px 0px #fff)
-                  drop-shadow(-2px -2px 0px #fff)
-                  drop-shadow(2px -2px 0px #fff)
-                  drop-shadow(-2px 2px 0px #fff)
-                  drop-shadow(1px 0px 0px #fff)
-                  drop-shadow(-1px 0px 0px #fff)
-                  drop-shadow(0px 1px 0px #fff)
-                  drop-shadow(0px -1px 0px #fff)
-                  drop-shadow(0px 0px 15px rgba(255,255,255,0.9))
-                `
+                filter: 'brightness(1.1) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.6))'
               }}
             />
           </Link>
