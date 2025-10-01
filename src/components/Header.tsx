@@ -19,12 +19,15 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <img 
-              src={londonStarLogo} 
-              alt="London Star Records" 
-              className="h-14 w-auto transition-all duration-500 group-hover:scale-110 group-hover:brightness-110 drop-shadow-lg"
-            />
+          <Link to="/" className="flex items-center group relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative px-3 py-2 rounded-xl border border-primary/20 bg-background/40 backdrop-blur-sm group-hover:border-primary/40 transition-all duration-500">
+              <img 
+                src={londonStarLogo} 
+                alt="London Star Records" 
+                className="h-10 w-auto transition-all duration-500 group-hover:scale-105 brightness-110"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

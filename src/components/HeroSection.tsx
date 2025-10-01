@@ -98,15 +98,19 @@ const HeroSection = () => {
             </p>
 
             {/* Service Cards */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
               {services.map((service, index) => (
-                <Card key={index} className="glass hover:glass-dark transition-all duration-500 hover:scale-105 card-modern">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                      <service.icon className="h-8 w-8 text-black" />
+                <Card 
+                  key={index} 
+                  className="interactive-card animate-fade-in-scale"
+                  style={{animationDelay: `${index * 0.1}s`}}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-4 animate-gentle-glow">
+                      <service.icon className="h-7 w-7 text-black" />
                     </div>
-                    <h3 className="text-white font-bold mb-3 text-lg">{service.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{service.description}</p>
+                    <h3 className="text-white font-bold mb-2 text-base">{service.title}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed">{service.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -145,35 +149,36 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
+          <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
             {/* Artist Info */}
-            <div className="card-modern rounded-3xl p-10">
-              <div className="flex items-start space-x-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary-glow rounded-3xl flex items-center justify-center shadow-2xl">
-                  <Music className="h-12 w-12 text-black" />
+            <div className="interactive-card rounded-2xl p-8 animate-fade-in-scale">
+              <div className="flex items-start space-x-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center animate-gentle-glow">
+                  <Music className="h-10 w-10 text-black" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-4xl font-bold text-foreground mb-3">{featuredArtist.name}</h3>
-                  <p className="text-emphasis text-2xl mb-6">Latest Single - "{featuredArtist.track}"</p>
-                  <p className="text-muted-foreground mb-8 text-lg leading-relaxed">{featuredArtist.description}</p>
-                  <div className="space-y-3 text-base text-muted-foreground mb-8">
+                  <h3 className="text-3xl font-bold text-foreground mb-2">{featuredArtist.name}</h3>
+                  <p className="text-emphasis text-xl mb-4">Latest Single - "{featuredArtist.track}"</p>
+                  <p className="text-muted-foreground mb-6 text-base leading-relaxed">{featuredArtist.description}</p>
+                  <div className="space-y-2 text-sm text-muted-foreground mb-6">
                     <div>• Executive Producer: London Star Records</div>
                     <div>• Available All Platforms</div>
                     <div>• Mixed & Mastered by: EAMz, Intravert Music Label</div>
                   </div>
-                  <div className="flex items-center space-x-6">
+                  <div className="flex items-center space-x-4">
                     <Button
-                      className="btn-modern px-8 py-4 text-base font-semibold rounded-xl"
+                      className="btn-modern px-6 py-3 text-sm font-semibold rounded-lg"
                       onClick={() => window.open(featuredArtist.musicVideo, '_blank')}
                     >
-                      <Play className="mr-3 h-5 w-5" />
+                      <Play className="mr-2 h-4 w-4" />
                       Watch Video
                     </Button>
                      <Button
-                       className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 px-8 py-4 text-base font-semibold rounded-xl"
+                       variant="outline"
+                       className="px-6 py-3 text-sm font-semibold rounded-lg border-primary/30 hover:bg-primary/10"
                        onClick={() => window.open(featuredArtist.instagram, '_blank')}
                      >
-                      <Instagram className="h-5 w-5" />
+                      <Instagram className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
