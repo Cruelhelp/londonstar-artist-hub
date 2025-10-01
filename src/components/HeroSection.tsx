@@ -1,4 +1,4 @@
-import { Play, Music, ExternalLink, Instagram, Star, Award, Users } from "lucide-react";
+import { Star, Award, Users, Instagram, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import MiniPlayer from "@/components/MiniPlayer";
@@ -81,16 +81,10 @@ const HeroSection = () => {
         {/* Main Content */}
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-7xl">
-            <div className="mb-8">
-              <span className="inline-block glass text-primary px-8 py-4 rounded-full text-base font-semibold border border-primary/30 animate-pulse-glow">
-                🎵 London Star Records
-              </span>
-            </div>
-            
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight">
               Elevating Caribbean Music
               <br />
-              <span className="text-emphasis animate-gradient">To Global Heights</span>
+              <span className="text-emphasis">To Global Heights</span>
             </h1>
             
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-4xl leading-relaxed font-light">
@@ -152,35 +146,26 @@ const HeroSection = () => {
           <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
             {/* Artist Info */}
             <div className="interactive-card rounded-2xl p-8 animate-fade-in-scale">
-              <div className="flex items-start space-x-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center animate-gentle-glow">
-                  <Music className="h-10 w-10 text-black" />
-                </div>
-                <div className="flex-1">
+              <div className="space-y-6">
+                <div>
                   <h3 className="text-3xl font-bold text-foreground mb-2">{featuredArtist.name}</h3>
                   <p className="text-emphasis text-xl mb-4">Latest Single - "{featuredArtist.track}"</p>
                   <p className="text-muted-foreground mb-6 text-base leading-relaxed">{featuredArtist.description}</p>
-                  <div className="space-y-2 text-sm text-muted-foreground mb-6">
-                    <div>• Executive Producer: London Star Records</div>
-                    <div>• Available All Platforms</div>
-                    <div>• Mixed & Mastered by: EAMz, Intravert Music Label</div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Button
-                      className="btn-modern px-6 py-3 text-sm font-semibold rounded-lg"
-                      onClick={() => window.open(featuredArtist.musicVideo, '_blank')}
-                    >
-                      <Play className="mr-2 h-4 w-4" />
-                      Watch Video
-                    </Button>
-                     <Button
-                       variant="outline"
-                       className="px-6 py-3 text-sm font-semibold rounded-lg border-primary/30 hover:bg-primary/10"
-                       onClick={() => window.open(featuredArtist.instagram, '_blank')}
-                     >
-                      <Instagram className="h-4 w-4" />
-                    </Button>
-                  </div>
+                </div>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div>• Executive Producer: London Star Records</div>
+                  <div>• Available All Platforms</div>
+                  <div>• Mixed & Mastered by: EAMz, Intravert Music Label</div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Button
+                    variant="outline"
+                    className="px-6 py-3 text-sm font-semibold rounded-lg border-primary/30 hover:bg-primary/10"
+                    onClick={() => window.open(featuredArtist.instagram, '_blank')}
+                  >
+                    <Instagram className="mr-2 h-4 w-4" />
+                    Follow Artist
+                  </Button>
                 </div>
               </div>
             </div>
