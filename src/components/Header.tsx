@@ -27,7 +27,7 @@ const Header = () => {
                 alt="London Star Records" 
                 className="h-10 w-auto transition-all duration-500 group-hover:scale-105 brightness-110"
                 style={{
-                  filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.4))'
+                  filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 1)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 1px rgba(255, 255, 255, 1))'
                 }}
               />
             </div>
