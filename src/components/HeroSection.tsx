@@ -5,6 +5,7 @@ import MiniPlayer from "@/components/MiniPlayer";
 import artistHero from "@/assets/artist-hero.jpg";
 import artistGlam from "@/assets/artist-glam.jpg";
 import artistPromo from "@/assets/artist-promo.jpg";
+import londonStarLogo from "@/assets/london-star-logo.png";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {
@@ -81,12 +82,25 @@ const HeroSection = () => {
         {/* Main Content */}
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-7xl">
+            {/* Logo Integration */}
+            <div className="flex items-center gap-6 mb-8 animate-fade-in">
+              <img
+                src={londonStarLogo}
+                alt="London Star Records"
+                className="h-24 md:h-32 lg:h-40 w-auto"
+                style={{
+                  filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.2))'
+                }}
+              />
+              <div className="h-16 md:h-20 lg:h-24 w-px bg-gradient-to-b from-transparent via-primary to-transparent"></div>
+            </div>
+
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight">
               Elevating Caribbean Music
               <br />
               <span className="text-emphasis">To Global Heights</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-4xl leading-relaxed font-light">
               London Star Records bridges Jamaica and the USA, discovering and developing exceptional Caribbean talent for the world stage.
             </p>
