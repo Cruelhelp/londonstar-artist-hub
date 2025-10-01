@@ -20,17 +20,26 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative px-4 py-2 rounded-xl border border-white/30 bg-white/10 backdrop-blur-sm group-hover:border-white/50 transition-all duration-500">
-              <img
-                src={londonStarLogo}
-                alt="London Star Records"
-                className="h-16 w-auto transition-all duration-500 group-hover:scale-105"
-                style={{
-                  filter: 'brightness(1.2) contrast(1.1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))'
-                }}
-              />
-            </div>
+            <img
+              src={londonStarLogo}
+              alt="London Star Records"
+              className="h-16 w-auto transition-transform duration-500 ease-in-out group-hover:scale-105"
+              style={{
+                filter: `
+                  brightness(1.3)
+                  contrast(1.2)
+                  drop-shadow(2px 2px 0px #fff)
+                  drop-shadow(-2px -2px 0px #fff)
+                  drop-shadow(2px -2px 0px #fff)
+                  drop-shadow(-2px 2px 0px #fff)
+                  drop-shadow(1px 0px 0px #fff)
+                  drop-shadow(-1px 0px 0px #fff)
+                  drop-shadow(0px 1px 0px #fff)
+                  drop-shadow(0px -1px 0px #fff)
+                  drop-shadow(0px 0px 15px rgba(255,255,255,0.9))
+                `
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
