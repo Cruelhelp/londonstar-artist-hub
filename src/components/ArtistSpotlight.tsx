@@ -122,8 +122,8 @@ const ArtistSpotlight = () => {
                       </Button>
                     )}
                     {artist.bookingContact && (
-                      <Button 
-                        className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 px-6 py-3 text-base font-semibold rounded-xl"
+                      <Button
+                        className="glass border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 px-6 py-3 text-base font-semibold rounded-xl transition-all duration-300"
                         onClick={() => window.open(`mailto:${artist.bookingContact}`, '_blank')}
                       >
                         Book Now
@@ -137,7 +137,7 @@ const ArtistSpotlight = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 px-10 py-4 text-lg font-semibold rounded-2xl backdrop-blur-md transition-all duration-300">
+          <Button className="glass border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 px-10 py-4 text-lg font-semibold rounded-2xl backdrop-blur-md transition-all duration-300">
             View All Artists
           </Button>
         </div>
