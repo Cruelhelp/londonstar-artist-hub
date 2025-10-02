@@ -8,11 +8,11 @@ import { Music, Mail, User, Phone, Send } from "lucide-react";
 import { z } from "zod";
 
 const signUpSchema = z.object({
-  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
-  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  phone: z.string().trim().min(10, "Phone number must be at least 10 digits").max(20, "Phone number must be less than 20 digits"),
-  artistName: z.string().trim().min(2, "Artist name must be at least 2 characters").max(100, "Artist name must be less than 100 characters"),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().min(10, "Phone must be at least 10 digits").max(20),
+  artistName: z.string().trim().min(2, "Artist name must be at least 2 characters").max(100),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000),
 });
 
 const SignUpForm = () => {
@@ -33,24 +33,15 @@ const SignUpForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Validate form data
+      // ✅ Validate form data
       const validatedData = signUpSchema.parse(formData);
 
-      // Send to Supabase Edge Function
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-      const response = await fetch(
-        `${supabaseUrl}/functions/v1/send-artist-application`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${supabaseAnonKey}`,
-          },
-          body: JSON.stringify(validatedData),
-        }
-      );
+      // ✅ Call your new Vercel API route
+      const response = await fetch("/api/send-artist-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(validatedData),
+      });
 
       const result = await response.json();
 
@@ -61,13 +52,7 @@ const SignUpForm = () => {
         });
 
         // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          artistName: "",
-          message: "",
-        });
+        setFormData({ name: "", email: "", phone: "", artistName: "", message: "" });
       } else {
         throw new Error(result.error || "Failed to submit application");
       }
@@ -119,8 +104,9 @@ const SignUpForm = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Full Name */}
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <label htmlFor="name" className="text-sm font-medium flex items-center gap-2">
                     <User className="h-4 w-4 text-primary" />
                     Full Name
                   </label>
@@ -135,8 +121,9 @@ const SignUpForm = () => {
                   {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
                 </div>
 
+                {/* Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <label htmlFor="email" className="text-sm font-medium flex items-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
                     Email Address
                   </label>
@@ -151,8 +138,9 @@ const SignUpForm = () => {
                   {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                 </div>
 
+                {/* Phone */}
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <label htmlFor="phone" className="text-sm font-medium flex items-center gap-2">
                     <Phone className="h-4 w-4 text-primary" />
                     Phone Number
                   </label>
@@ -167,8 +155,9 @@ const SignUpForm = () => {
                   {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
                 </div>
 
+                {/* Artist Name */}
                 <div className="space-y-2">
-                  <label htmlFor="artistName" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <label htmlFor="artistName" className="text-sm font-medium flex items-center gap-2">
                     <Music className="h-4 w-4 text-primary" />
                     Artist/Stage Name
                   </label>
@@ -183,13 +172,14 @@ const SignUpForm = () => {
                   {errors.artistName && <p className="text-sm text-destructive">{errors.artistName}</p>}
                 </div>
 
+                {/* Message */}
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-foreground">
                     Tell Us About Your Music
                   </label>
                   <Textarea
                     id="message"
-                    placeholder="Share your music style, experience, goals, and why you want to join London Star Records..."
+                    placeholder="Share your music style, experience, goals..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={6}
@@ -198,6 +188,7 @@ const SignUpForm = () => {
                   {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
                 </div>
 
+                {/* Submit */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
