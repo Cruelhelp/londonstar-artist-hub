@@ -36,18 +36,25 @@ const SignUpForm = () => {
       // Validate form data
       const validatedData = signUpSchema.parse(formData);
 
-      // Create WhatsApp message
-      const message = `New Artist Application:\n\nName: ${validatedData.name}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone}\nArtist Name: ${validatedData.artistName}\nMessage: ${validatedData.message}`;
-      
-      const whatsappNumber = "13475588518";
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-      
-      // Open WhatsApp
-      window.open(whatsappUrl, '_blank');
+      // Create mailto link
+      const subject = encodeURIComponent(`New Artist Application - ${validatedData.artistName}`);
+      const body = encodeURIComponent(
+        `New Artist Application:\n\n` +
+        `Name: ${validatedData.name}\n` +
+        `Email: ${validatedData.email}\n` +
+        `Phone: ${validatedData.phone}\n` +
+        `Artist Name: ${validatedData.artistName}\n\n` +
+        `Message:\n${validatedData.message}`
+      );
+
+      const mailtoUrl = `mailto:info@londonstarrecords.studio?subject=${subject}&body=${body}`;
+
+      // Open email client
+      window.location.href = mailtoUrl;
 
       toast({
         title: "Application Sent!",
-        description: "Your application has been submitted. We'll review and get back to you soon!",
+        description: "Your email client has been opened. Please send the email to complete your application.",
       });
 
       // Reset form

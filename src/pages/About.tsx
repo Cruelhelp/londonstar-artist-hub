@@ -69,10 +69,10 @@ const About = () => {
                 About <span className="text-emphasis text-4xl md:text-6xl">London Star Records</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                A music label connecting Jamaica and the USA, helping Caribbean artists 
-                reach global audiences. We work with talented musicians and provide them 
-                with production, promotion, and distribution services to grow their careers 
-                in the music industry.
+                London Star Records is a music label bridging Jamaica and the USA, dedicated to helping Caribbean artists
+                reach global audiences. We provide comprehensive services including professional recording, production,
+                mixing, mastering, distribution, promotion, and artist development to support musicians at every stage
+                of their career.
               </p>
             </div>
           </div>
@@ -136,16 +136,17 @@ const About = () => {
                   className="interactive-card group overflow-hidden animate-fade-in-scale"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
-                  <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/10 to-background">
+                  <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)' }}>
                     <img
                       src={member.image}
                       alt={member.name}
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{
-                        objectPosition: member.name === "Ryan Small" ? "center 20%" : 
-                                      member.name === "Altian Gordon" ? "center 25%" : 
+                        objectPosition: member.name === "Ryan Small" ? "center 10%" :
+                                      member.name === "Altian Gordon" ? "center 15%" :
                                       "center",
-                        filter: 'brightness(1.05) contrast(1.05) saturate(1.1)'
+                        filter: 'brightness(1.1) contrast(1.08) saturate(1.05)',
+                        background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%)'
                       }}
                     />
                   </div>
