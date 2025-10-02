@@ -9,16 +9,16 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "regulusshinesbright@gmail.com",
+      details: "info@londonstarrecords.studio",
       description: "For bookings, submissions, and general inquiries",
-      action: () => window.open('mailto:regulusshinesbright@gmail.com', '_blank')
+      action: () => window.open('mailto:info@londonstarrecords.studio', '_blank')
     },
     {
       icon: Phone,
       title: "WhatsApp",
-      details: "+1 876-373-6661",
+      details: "+1 (347) 558-8518",
       description: "Direct line for urgent matters and bookings",
-      action: () => window.open('https://wa.me/18763736661', '_blank')
+      action: () => window.open('https://wa.me/13475588518', '_blank')
     },
     {
       icon: MapPin,
@@ -41,28 +41,28 @@ const Contact = () => {
       title: "Artist Bookings",
       description: "Book our artists for shows, events, and collaborations",
       contact: "JAM-EAZY Entertainment",
-      email: "regulusshinesbright@gmail.com",
-      whatsapp: "876-373-6661"
+      email: "info@londonstarrecords.studio",
+      whatsapp: "13475588518"
     },
     {
       title: "Music Submissions",
       description: "Submit your demos and tracks for consideration",
       contact: "A&R Department",
-      email: "regulusshinesbright@gmail.com",
+      email: "info@londonstarrecords.studio",
       note: "Please include artist bio and social media links"
     },
     {
       title: "Production Services",
       description: "Recording, mixing, mastering, and production inquiries",
       contact: "Production Team",
-      email: "regulusshinesbright@gmail.com",
+      email: "info@londonstarrecords.studio",
       note: "State your project requirements and timeline"
     },
     {
       title: "Press & Media",
       description: "Media inquiries, interviews, and press opportunities",
       contact: "Media Relations",
-      email: "regulusshinesbright@gmail.com",
+      email: "info@londonstarrecords.studio",
       note: "Include publication details and deadline"
     }
   ];
@@ -194,7 +194,7 @@ const Contact = () => {
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => window.open('mailto:regulusshinesbright@gmail.com', '_blank')}
+                  onClick={() => window.open('mailto:info@londonstarrecords.studio', '_blank')}
                 >
                   <Mail className="mr-2 h-5 w-5" />
                   Send Email
@@ -203,7 +203,7 @@ const Contact = () => {
                   variant="outline" 
                   size="lg"
                   className="border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
-                  onClick={() => window.open('https://wa.me/18763736661', '_blank')}
+                  onClick={() => window.open('https://wa.me/13475588518', '_blank')}
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   WhatsApp Now

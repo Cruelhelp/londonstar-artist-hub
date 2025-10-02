@@ -15,37 +15,37 @@ const About = () => {
     {
       name: "Christopher Moore",
       role: "CEO & Founder",
-      bio: "Visionary leader with years in the music industry, connecting Caribbean talent with global audiences.",
+      bio: "Industry leader connecting Caribbean talent with global audiences and building artist careers.",
       image: teamCeo,
-      contact: "regulusshinesbright@gmail.com"
+      contact: "info@londonstarrecords.studio"
     },
     {
-      name: "Shanique Campbell",
+      name: "Simone Campbell",
       role: "Manager",
       bio: "Strategic management expert specializing in artist development and talent coordination.",
       image: teamManager,
-      contact: "shanique@londonstarrecords.com"
+      contact: "info@londonstarrecords.studio"
     },
     {
       name: "Ryan Small",
       role: "Bookings & Events",
       bio: "Expert in artist bookings and event coordination, ensuring seamless performances.",
       image: teamBookings,
-      contact: "ryan@londonstarrecords.com"
+      contact: "info@londonstarrecords.studio"
     },
     {
-      name: "EAMz",
+      name: "Geovauney Elliotte",
       role: "Lead Audio Engineer",
-      bio: "Award-winning producer and sound engineer, crafting the signature London Star Records sound.",
+      bio: "Producer and sound engineer crafting the signature London Star Records sound.",
       image: teamEngineer,
-      contact: "eamz@londonstarrecords.com"
+      contact: "info@londonstarrecords.studio"
     },
     {
-      name: "Unique",
+      name: "Altian Gordon",
       role: "Hair & Makeup Artist",
       bio: "Creative stylist bringing artist visions to life with stunning hair and makeup designs.",
       image: teamHairMakeup,
-      contact: "unique@londonstarrecords.com"
+      contact: "info@londonstarrecords.studio"
     }
   ];
 
@@ -69,10 +69,10 @@ const About = () => {
                 About <span className="text-emphasis text-4xl md:text-6xl">London Star Records</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                A dynamic music label bridging Jamaica and the USA, 
-                dedicated to elevating Caribbean talent to the global stage. We specialize in 
-                discovering, developing, and promoting exceptional artists who represent the 
-                authentic sound and spirit of the Caribbean.
+                A music label connecting Jamaica and the USA, helping Caribbean artists 
+                reach global audiences. We work with talented musicians and provide them 
+                with production, promotion, and distribution services to grow their careers 
+                in the music industry.
               </p>
             </div>
           </div>
@@ -88,8 +88,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To showcase authentic Caribbean music and culture to the world, 
-                  providing artists with the platform they deserve.
+                  To connect Caribbean music and culture with worldwide audiences, 
+                  giving artists the support and platform to succeed.
                 </p>
               </Card>
               <Card className="interactive-card text-center p-8 animate-fade-in-scale" style={{animationDelay: '0.15s'}}>
@@ -98,8 +98,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To become the leading record label for Caribbean artists, 
-                  fostering global recognition and commercial success.
+                  To be a leading record label for Caribbean artists, 
+                  helping them gain recognition and build successful music careers.
                 </p>
               </Card>
               <Card className="interactive-card text-center p-8 animate-fade-in-scale" style={{animationDelay: '0.3s'}}>
@@ -108,8 +108,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Values</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Authenticity, creativity, and excellence drive everything we do, 
-                  ensuring our artists maintain their unique voice.
+                  Authenticity, creativity, and quality in everything we do, 
+                  helping our artists maintain their unique voice and style.
                 </p>
               </Card>
             </div>
@@ -136,11 +136,17 @@ const About = () => {
                   className="interactive-card group overflow-hidden animate-fade-in-scale"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
-                  <div className="relative overflow-hidden bg-gradient-to-br from-secondary/20 to-background">
+                  <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/10 to-background">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-72 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                      style={{
+                        objectPosition: member.name === "Ryan Small" ? "center 20%" : 
+                                      member.name === "Altian Gordon" ? "center 25%" : 
+                                      "center",
+                        filter: 'brightness(1.05) contrast(1.05) saturate(1.1)'
+                      }}
                     />
                   </div>
                   
@@ -179,7 +185,7 @@ const About = () => {
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => window.open('mailto:regulusshinesbright@gmail.com', '_blank')}
+                  onClick={() => window.open('mailto:info@londonstarrecords.studio', '_blank')}
                 >
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
@@ -188,7 +194,7 @@ const About = () => {
                   variant="outline" 
                   size="lg"
                   className="border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10"
-                  onClick={() => window.open('https://wa.me/18763736661', '_blank')}
+                  onClick={() => window.open('https://wa.me/13475588518', '_blank')}
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   WhatsApp

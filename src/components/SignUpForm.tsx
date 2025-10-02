@@ -39,7 +39,7 @@ const SignUpForm = () => {
       // Create WhatsApp message
       const message = `New Artist Application:\n\nName: ${validatedData.name}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone}\nArtist Name: ${validatedData.artistName}\nMessage: ${validatedData.message}`;
       
-      const whatsappNumber = "8763736661";
+      const whatsappNumber = "13475588518";
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       
       // Open WhatsApp
