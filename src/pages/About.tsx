@@ -13,7 +13,7 @@ import teamHairMakeup from "@/assets/team-hair-makeup.png";
 const About = () => {
   const teamMembers = [
     {
-      name: "Regulus Akeem Campbell",
+      name: "Christopher Moore",
       role: "CEO & Founder",
       bio: "Visionary leader with years in the music industry, connecting Caribbean talent with global audiences.",
       image: teamCeo,
@@ -60,13 +60,13 @@ const About = () => {
               <img
                 src={londonStarLogo}
                 alt="London Star Records"
-                className="h-24 md:h-32 w-auto mx-auto mb-8"
+                className="h-32 md:h-40 w-auto mx-auto mb-8"
                 style={{
-                  filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(255, 215, 0, 0.3))'
+                  filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8))'
                 }}
               />
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
-                About <span className="text-emphasis">London Star Records</span>
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+                About <span className="text-emphasis text-4xl md:text-6xl">London Star Records</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                 A dynamic music label bridging Jamaica and the USA, 
@@ -140,7 +140,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-72 object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   

@@ -29,7 +29,10 @@ const Footer = () => {
               <img 
                 src={londonStarLogo} 
                 alt="London Star Records" 
-                className="h-16 w-16 object-contain drop-shadow-lg"
+                className="h-16 w-16 object-contain"
+                style={{
+                  filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))'
+                }}
               />
               <div>
                 <h3 className="text-2xl font-bold">London Star Records</h3>
