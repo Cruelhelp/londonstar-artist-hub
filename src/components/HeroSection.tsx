@@ -83,16 +83,15 @@ const HeroSection = () => {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-7xl">
             {/* Logo Integration */}
-            <div className="flex flex-col items-center justify-center mb-12 animate-fade-in">
+            <div className="flex flex-col items-center justify-center mb-8 animate-fade-in">
               <img
                 src={londonStarLogo}
                 alt="London Star Records"
-                className="h-32 md:h-40 lg:h-48 w-auto mb-6"
+                className="h-32 md:h-40 lg:h-48 w-auto"
                 style={{
                   filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.2))'
                 }}
               />
-              <div className="h-px w-32 md:w-48 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight">
@@ -106,26 +105,26 @@ const HeroSection = () => {
             </p>
 
             {/* Service Cards */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {services.map((service, index) => (
                 <Card 
                   key={index} 
-                  className="interactive-card animate-fade-in-scale"
+                  className="interactive-card bg-card/80 backdrop-blur-sm border-primary/20 animate-fade-in-scale"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
                   <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-4 animate-gentle-glow">
-                      <service.icon className="h-7 w-7 text-black" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4 animate-gentle-glow shadow-lg shadow-primary/25">
+                      <service.icon className="h-7 w-7 text-black" strokeWidth={2.5} />
                     </div>
-                    <h3 className="text-white font-bold mb-2 text-base">{service.title}</h3>
-                    <p className="text-white/70 text-sm leading-relaxed">{service.description}</p>
+                    <h3 className="text-foreground font-bold mb-2 text-base">{service.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             {/* Call to Action Buttons */}
-            <div className="flex flex-wrap gap-6 lg:gap-8 mb-20">
+            <div className="flex flex-wrap gap-6 lg:gap-8 mb-16">
               <Button 
                 className="btn-modern px-10 py-6 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-primary/25 transition-all duration-300"
                 size="lg"

@@ -1,38 +1,51 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Instagram, Youtube } from "lucide-react";
+import { Mail, Phone, Target, Eye, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import londonStarLogo from "@/assets/london-star-logo.png";
+import teamCeo from "@/assets/team-ceo.png";
+import teamManager from "@/assets/team-manager.png";
+import teamBookings from "@/assets/team-bookings.png";
+import teamEngineer from "@/assets/team-engineer.png";
+import teamHairMakeup from "@/assets/team-hair-makeup.png";
 
 const About = () => {
   const teamMembers = [
     {
-      name: "Marcus Johnson",
+      name: "Regulus Akeem Campbell",
       role: "CEO & Founder",
-      bio: "Visionary leader with 15+ years in the music industry, connecting Caribbean talent with global audiences.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      contact: "marcus@londonstarrecords.com"
+      bio: "Visionary leader with years in the music industry, connecting Caribbean talent with global audiences.",
+      image: teamCeo,
+      contact: "regulusshinesbright@gmail.com"
     },
     {
-      name: "Sarah Chen",
-      role: "Head of Marketing",
-      bio: "Strategic marketing expert specializing in artist development and digital campaign management.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b9a53938?w=400&h=400&fit=crop&crop=face",
-      contact: "sarah@londonstarrecords.com"
+      name: "Shanique Campbell",
+      role: "Manager",
+      bio: "Strategic management expert specializing in artist development and talent coordination.",
+      image: teamManager,
+      contact: "shanique@londonstarrecords.com"
+    },
+    {
+      name: "Ryan Small",
+      role: "Bookings & Events",
+      bio: "Expert in artist bookings and event coordination, ensuring seamless performances.",
+      image: teamBookings,
+      contact: "ryan@londonstarrecords.com"
     },
     {
       name: "EAMz",
       role: "Lead Audio Engineer",
       bio: "Award-winning producer and sound engineer, crafting the signature London Star Records sound.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: teamEngineer,
       contact: "eamz@londonstarrecords.com"
     },
     {
-      name: "Alpharunehgrung",
-      role: "Music Producer",
-      bio: "Creative force behind hit compositions, blending traditional Caribbean rhythms with modern production.",
-      image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
-      contact: "alpha@londonstarrecords.com"
+      name: "Unique",
+      role: "Hair & Makeup Artist",
+      bio: "Creative stylist bringing artist visions to life with stunning hair and makeup designs.",
+      image: teamHairMakeup,
+      contact: "unique@londonstarrecords.com"
     }
   ];
 
@@ -41,14 +54,22 @@ const About = () => {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-primary/10 to-background">
+        <section className="py-20 bg-gradient-to-b from-background via-secondary/30 to-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 animate-fade-in">
+              <img
+                src={londonStarLogo}
+                alt="London Star Records"
+                className="h-24 md:h-32 w-auto mx-auto mb-8"
+                style={{
+                  filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(255, 215, 0, 0.3))'
+                }}
+              />
               <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
-                About <span className="text-primary">London Star</span>
+                About <span className="text-emphasis">London Star Records</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                London Star Records is a dynamic music label bridging Jamaica and the USA, 
+                A dynamic music label bridging Jamaica and the USA, 
                 dedicated to elevating Caribbean talent to the global stage. We specialize in 
                 discovering, developing, and promoting exceptional artists who represent the 
                 authentic sound and spirit of the Caribbean.
@@ -58,39 +79,39 @@ const About = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="py-16 bg-muted/20">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center animate-slide-up">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="h-10 w-10 text-white" />
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <Card className="interactive-card text-center p-8 animate-fade-in-scale">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-6 animate-gentle-glow">
+                  <Target className="h-8 w-8 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
                   To showcase authentic Caribbean music and culture to the world, 
                   providing artists with the platform they deserve.
                 </p>
-              </div>
-              <div className="text-center animate-slide-up" style={{animationDelay: '0.2s'}}>
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Youtube className="h-10 w-10 text-white" />
+              </Card>
+              <Card className="interactive-card text-center p-8 animate-fade-in-scale" style={{animationDelay: '0.15s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-6 animate-gentle-glow">
+                  <Eye className="h-8 w-8 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-bold mb-4 text-foreground">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
                   To become the leading record label for Caribbean artists, 
                   fostering global recognition and commercial success.
                 </p>
-              </div>
-              <div className="text-center animate-slide-up" style={{animationDelay: '0.4s'}}>
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Instagram className="h-10 w-10 text-white" />
+              </Card>
+              <Card className="interactive-card text-center p-8 animate-fade-in-scale" style={{animationDelay: '0.3s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-6 animate-gentle-glow">
+                  <Heart className="h-8 w-8 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Our Values</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-bold mb-4 text-foreground">Our Values</h3>
+                <p className="text-muted-foreground leading-relaxed">
                   Authenticity, creativity, and excellence drive everything we do, 
                   ensuring our artists maintain their unique voice.
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </section>
@@ -108,30 +129,29 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {teamMembers.map((member, index) => (
                 <Card 
                   key={index} 
-                  className="group overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in"
+                  className="interactive-card group overflow-hidden animate-fade-in-scale"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden bg-gradient-to-br from-secondary/20 to-background">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 bg-card">
                     <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                    <p className="text-primary font-semibold mb-3">{member.role}</p>
+                    <p className="text-emphasis font-semibold mb-3">{member.role}</p>
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="w-full"
+                      className="w-full border-primary/30 hover:bg-primary/10"
                       onClick={() => window.open(`mailto:${member.contact}`, '_blank')}
                     >
                       <Mail className="mr-2 h-4 w-4" />
