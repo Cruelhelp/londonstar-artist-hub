@@ -36,35 +36,41 @@ const SignUpForm = () => {
       // Validate form data
       const validatedData = signUpSchema.parse(formData);
 
-      // Create mailto link
-      const subject = encodeURIComponent(`New Artist Application - ${validatedData.artistName}`);
-      const body = encodeURIComponent(
-        `New Artist Application:\n\n` +
-        `Name: ${validatedData.name}\n` +
-        `Email: ${validatedData.email}\n` +
-        `Phone: ${validatedData.phone}\n` +
-        `Artist Name: ${validatedData.artistName}\n\n` +
-        `Message:\n${validatedData.message}`
+      // Send to Supabase Edge Function
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const response = await fetch(
+        `${supabaseUrl}/functions/v1/send-artist-application`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${supabaseAnonKey}`,
+          },
+          body: JSON.stringify(validatedData),
+        }
       );
 
-      const mailtoUrl = `mailto:info@londonstarrecords.studio?subject=${subject}&body=${body}`;
+      const result = await response.json();
 
-      // Open email client
-      window.location.href = mailtoUrl;
+      if (response.ok && result.success) {
+        toast({
+          title: "Application Sent!",
+          description: "Your application has been submitted successfully. We'll review it and get back to you soon!",
+        });
 
-      toast({
-        title: "Application Sent!",
-        description: "Your email client has been opened. Please send the email to complete your application.",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        artistName: "",
-        message: "",
-      });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          artistName: "",
+          message: "",
+        });
+      } else {
+        throw new Error(result.error || "Failed to submit application");
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
