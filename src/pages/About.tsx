@@ -69,10 +69,7 @@ const About = () => {
                 About <span className="text-emphasis text-4xl md:text-6xl">London Star Records</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                London Star Records is a music label bridging Jamaica and the USA, dedicated to helping Caribbean artists
-                reach global audiences. We provide comprehensive services including professional recording, production,
-                mixing, mastering, distribution, promotion, and artist development to support musicians at every stage
-                of their career.
+                We here at London Star Records don't just develop artists; we build international careers. Our mission is to take groundbreaking music from the local level and launch it onto the world's biggest platforms. We accomplish this through a synergy of deep artistic development, strategic marketing, and an established network of global partners. We eliminate the boundary between local success and international recognition, ensuring every artist on our roster has the infrastructure to be heard in every territory, on every chart, and by every kind of listener.
               </p>
             </div>
           </div>
@@ -88,8 +85,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To connect Caribbean music and culture with worldwide audiences, 
-                  giving artists the support and platform to succeed.
+                  Here at London Star Records, we are dedicated to one uncompromising goal: to discover, cultivate, and champion artists who are poised to redefine their genre. We are a curatorial force, not just a machine. Our mission is to partner with boundary-pushing creators, providing them with the resources, strategic freedom, and global platform necessary to transform their unique vision into a lasting cultural impact. We are the quality standard in Dancehall.
                 </p>
               </Card>
               <Card className="interactive-card text-center p-8 animate-fade-in-scale" style={{animationDelay: '0.15s'}}>
@@ -98,8 +94,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be a leading record label for Caribbean artists, 
-                  helping them gain recognition and build successful music careers.
+                  We envision London Star Records as more than a label; we will be a global institution synonymous with quality, innovation, and career excellence. Our goal is to consistently discover and break artists whose work defines cultural moments, setting the benchmark for the entire industry. We strive to build a legacy rooted in creativity, where our roster's music is not just heard, but is woven into the soundtrack of the future.
                 </p>
               </Card>
               <Card className="interactive-card text-center p-8 animate-fade-in-scale" style={{animationDelay: '0.3s'}}>
@@ -108,8 +103,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Values</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Authenticity, creativity, and quality in everything we do, 
-                  helping our artists maintain their unique voice and style.
+                  We fiercely protect the artistic vision. Our commitment is to provide support, resources, and strategic direction without ever compromising the unique voice that makes an artist special. We believe the best careers are built on authentic expression, not trends.
                 </p>
               </Card>
             </div>

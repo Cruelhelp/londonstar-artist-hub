@@ -21,22 +21,22 @@ const HeroSection = () => {
     {
       icon: Star,
       title: "Artist Development",
-      description: "Comprehensive talent development from discovery to stardom"
+      description: "The music industry is complex. Your only job should be making incredible art—our job is to handle the rest. We turn raw talent into a successful, resilient brand."
     },
     {
       icon: Music,
       title: "Production Services",
-      description: "World-class recording, mixing, and mastering facilities"
+      description: "World-class production for the independent artist. Leverage the experience, gear, and ears that build our label's sound."
     },
     {
       icon: Award,
       title: "Marketing & Promotion",
-      description: "Strategic campaigns to maximize reach and impact"
+      description: "Playlist pitching, digital advertising, content strategy, and press relations to build dedicated fanbases and drive streams."
     },
     {
       icon: Users,
       title: "Distribution",
-      description: "Global distribution across all major streaming platforms"
+      description: "Global reach with seamless distribution to every platform. Your music delivered instantly and reliably worldwide."
     }
   ];
 
@@ -44,7 +44,7 @@ const HeroSection = () => {
     name: "Wahriah Queen",
     track: "Money Rain",
     project: "Touch Down EP",
-    description: "Rising star from Jamaica bringing authentic Caribbean vibes to the global stage.",
+    description: "We don't just sign music; we invest in visionaries. This is the sound we're passionate about, the talent we're committed to, and the future of Dancehall.",
     image: artistHero,
     youtubeChannel: "https://www.youtube.com/@wahriahqueenvevo5984",
     musicVideo: "https://www.youtube.com/watch?v=Y8OQmcWQfTI",
@@ -101,7 +101,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-4xl leading-relaxed font-light">
-              London Star Records bridges Jamaica and the USA, discovering and developing exceptional Caribbean talent for the world stage.
+              We don't just develop artists; we build international careers. Our mission is to take groundbreaking music from the local level and launch it onto the world's biggest platforms.
             </p>
 
             {/* Service Cards */}
@@ -128,7 +128,7 @@ const HeroSection = () => {
               <Button 
                 className="btn-modern px-10 py-6 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-primary/25 transition-all duration-300"
                 size="lg"
-                onClick={() => window.open('mailto:regulusshinesbright@gmail.com', '_blank')}
+                onClick={() => window.open('mailto:info@londonstarrecords.studio', '_blank')}
               >
                 <Users className="mr-4 h-6 w-6" />
                 Work With Us
@@ -152,7 +152,7 @@ const HeroSection = () => {
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 tracking-tight">Featured Artist</h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Discover our latest spotlight artist making waves in the Caribbean music scene
+              Dive into the work of our featured artists, hear their latest projects, and discover the music that's setting the new standard.
             </p>
           </div>
 

@@ -18,10 +18,10 @@ All colors MUST be HSL.
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary: London Star Orange - Matching Logo */
-    --primary: 33 100% 50%;
+    /* Primary: London Star Orange - Lighter shade */
+    --primary: 33 100% 65%;
     --primary-foreground: 0 0% 0%;
-    --primary-glow: 33 100% 60%;
+    --primary-glow: 33 100% 75%;
 
     /* Secondary: Deep Black */
     --secondary: 0 0% 8%;
@@ -32,7 +32,7 @@ All colors MUST be HSL.
     --muted-foreground: 0 0% 65%;
 
     /* Accent: Bright Orange */
-    --accent: 33 100% 50%;
+    --accent: 33 100% 65%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
@@ -40,18 +40,18 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 33 100% 50%;
+    --ring: 33 100% 65%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 33 100% 50%;
+    --sidebar-primary: 33 100% 65%;
     --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 33 100% 50%;
+    --sidebar-ring: 33 100% 65%;
   }
 
   .light {
@@ -61,19 +61,19 @@ All colors MUST be HSL.
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 98%;
-    --primary: 33 100% 50%;
+    --primary: 33 100% 65%;
     --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 65%;
-    --accent: 33 100% 50%;
+    --accent: 33 100% 65%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 33 100% 50%;
+    --ring: 33 100% 65%;
   }
 }
 
